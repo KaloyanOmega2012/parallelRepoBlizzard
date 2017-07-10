@@ -24,7 +24,6 @@ namespace ParallelSeleniumWebDriver
         [Test]
         public void ClickBtnGames()
         {
-            //a
             IWebDriver drv = new ChromeDriver();
 
             drv.Navigate().GoToUrl(blizUrl);
