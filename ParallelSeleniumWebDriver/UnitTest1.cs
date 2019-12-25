@@ -20,6 +20,11 @@ namespace ParallelSeleniumWebDriver
             
         //}
 
+        [Test]
+        public void GreenTest()
+        {
+
+        }
 
         [Test]
         public void ClickBtnGames()
