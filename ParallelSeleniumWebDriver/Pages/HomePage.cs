@@ -10,12 +10,19 @@ namespace ParallelSeleniumWebDriver
 	public class HomePage
 	{
         private IWebDriver driver;
+        private readonly string blizUrl = "http://eu.blizzard.com/en-gb/";
 
-        public HomePage(IWebDriver driver)
+        public HomePage(IWebDriver driver, TopNavigation topNavigation)
         {
             this.driver = driver;
+            TopNavigation = topNavigation;
         }
 
-		public TopNavigation TopNavigation => new TopNavigation(driver);
-	}
+        public TopNavigation TopNavigation { get; }
+
+        public void GoTo()
+        {
+            driver.Navigate().GoToUrl(blizUrl);
+        }
+    }
 }

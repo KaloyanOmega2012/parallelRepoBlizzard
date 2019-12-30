@@ -11,15 +11,21 @@ namespace ParallelSeleniumWebDriver.PageObjects
 	{
 
         IWebElement element;
+        private IWebDriver driver;
+        private string baseSelector;
+        private string elementSelector;
 
-		public Button(IWebDriver driver ,string baseSelector,string elementSelector)
+        public Button(IWebDriver driver ,string baseSelector,string elementSelector)
 		{
-			element = driver.FindElement(By.CssSelector($"{baseSelector} {elementSelector}"));
+            this.driver = driver;
+            this.baseSelector = baseSelector;
+            this.elementSelector = elementSelector;
 		}
 
 		public void Click()
 		{
-			element.Click();
+            element = driver.FindElement(By.CssSelector($"{baseSelector} {elementSelector}"));
+            element.Click();
 		}
 
 	}
